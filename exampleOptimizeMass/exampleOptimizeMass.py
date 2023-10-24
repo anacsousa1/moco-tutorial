@@ -108,6 +108,9 @@ problem.addGoal(endpointCost)
 solver = moco.initTropterSolver()
 
 # Now that we've finished setting up the study, print it to a file.
+if not os.path.exists("Results") or not os.path.isdir("Results"): # Create the folder if it doesn't exist
+    print("Create folder Results")
+    os.makedirs("Results", exist_ok=True)
 moco.printToXML('Results/optimize_mass.omoco')
 
 # Solve the problem.
