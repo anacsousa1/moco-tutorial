@@ -117,6 +117,9 @@ ignore_activation_dynamics = False
 ignore_tendon_compliance = False
 modelExample = create_hanging_muscle_model(ignore_activation_dynamics,
                                     ignore_tendon_compliance)
+if not os.path.exists("Results") or not os.path.isdir("Results"): # Create the folder if it doesn't exist
+    print("Create folder Results")
+    os.makedirs("Results", exist_ok=True)
 modelExample.printToXML("Results/hanging_muscle.osim")
 
 study = osim.MocoStudy()
