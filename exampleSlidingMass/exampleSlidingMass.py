@@ -83,6 +83,9 @@ solver = study.initTropterSolver()
 solver.set_num_mesh_intervals(100)
 
 # Now that we've finished setting up the study, print it to a file.
+if not os.path.exists("Results") or not os.path.isdir("Results"): # Create the folder if it doesn't exist
+    print("Create folder Results")
+    os.makedirs("Results", exist_ok=True)
 study.printToXML('Results/sliding_mass.omoco')
 
 # Solve the problem.
