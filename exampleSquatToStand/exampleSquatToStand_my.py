@@ -3,15 +3,24 @@
 import os
 os.add_dll_directory("C:/OpenSim 4.4/bin")
 import opensim as osim
-from ExampleSquatToStandHelpers import get_muscle_driven_model, compare_inverse_solutions, get_torque_driven_model
+from exampleSquatToStand_helpers import get_muscle_driven_model, compare_inverse_solutions, get_torque_driven_model
 from mocoPlotTrajectory import mocoPlotTrajectory
 import numpy as np
 
+# Deal with folders
+#   Create folder Results if it doesn't exist
+if not os.path.exists("Results") or not os.path.isdir("Results"):
+    print("Create folder Results")
+    os.makedirs("Results", exist_ok=True)
+#   Create folder ElaboratedData if it doesn't exist
+if not os.path.exists("ElaboratedData") or not os.path.isdir("ElaboratedData"):
+    print("Create folder ElaboratedData")
+    os.makedirs("ElaboratedData", exist_ok=True)
+
+# Create models
 torque_driven_model = get_torque_driven_model()
 muscle_driven_model = get_muscle_driven_model()
 
-torque_driven_model.printToXML("ElaboratedData/torque_driven_model.osim")
-muscle_driven_model.printToXML("ElaboratedData/muscle_driven_model.osim")
 
 # #Part 1: Torque-driven Predictive Problem
 # Part 1a: Create a new MocoStudy.

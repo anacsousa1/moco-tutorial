@@ -178,9 +178,9 @@ data_folder_path = os.path.join(parent_directory, "Data")
 
 
 # This problem solves in about 5 minutes.
-solve_moco_inverse(data_folder_path)
+#solve_moco_inverse(data_folder_path)
 
 
 # This problem penalizes the deviation from electromyography data for a
 # subset of muscles, and solves in about 30 minutes.
-#solve_moco_inverse_with_emg(data_folder_path)
+solve_moco_inverse_with_emg(data_folder_path)

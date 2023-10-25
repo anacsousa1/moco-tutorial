@@ -29,6 +29,7 @@ def get_torque_driven_model():
     add_coordinate_actuator(model, 'knee_angle_r', 300)
     add_coordinate_actuator(model, 'ankle_angle_r', 150)
 
+    model.printToXML("ElaboratedData/torque_driven_model.osim")
     return model
 
 
@@ -63,6 +64,7 @@ def get_muscle_driven_model():
             # excessive passive fiber force.
             dgf.set_ignore_passive_fiber_force(True)
 
+    model.printToXML("ElaboratedData/muscle_driven_model.osim")
     return model
 
 
