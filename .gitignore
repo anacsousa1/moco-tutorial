@@ -162,3 +162,9 @@ cython_debug/
 /exampleOptimizeMass/Results/
 /exampleHangingMuscle/Results/
 /exampleMocoTrack/Results/
+/exampleMocoInverse/Results/
+/exampleMocoTrack/*.txt
+/exampleMocoTrack/torque_driven_marker_tracking_tracked_markers.sto
+/exampleMocoTrack/muscle_driven_state_tracking_tracked_states.sto
+/exampleSquatToStand/ElaboratedData/
+/exampleSquatToStand/Results/
