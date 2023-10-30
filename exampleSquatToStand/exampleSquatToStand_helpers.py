@@ -1,8 +1,9 @@
+import os
 import opensim as osim
 import numpy as np
 import matplotlib.pyplot as plt
 
-link_to_model = 'Data/squatToStand_3dof9musc.osim'
+generic_link = 'Data/squatToStand_3dof9musc.osim'
 
 
 def add_coordinate_actuator(model, coord_name, opt_force):
@@ -17,6 +18,13 @@ def add_coordinate_actuator(model, coord_name, opt_force):
 
 
 def get_torque_driven_model():
+    #   Look for Data in the parent directory
+    current_directory = os.getcwd()
+    parent_directory = os.path.dirname(current_directory)
+    data_folder_path = os.path.join(parent_directory, "Data")
+
+    link_to_model = os.path.join(data_folder_path, generic_link)
+
     # Load the base model.
     model = osim.Model(link_to_model)
 
@@ -34,6 +42,12 @@ def get_torque_driven_model():
 
 
 def get_muscle_driven_model():
+    #   Look for Data in the parent directory
+    current_directory = os.getcwd()
+    parent_directory = os.path.dirname(current_directory)
+    data_folder_path = os.path.join(parent_directory, "Data")
+
+    link_to_model = os.path.join(data_folder_path, generic_link)
 
     # Load the base model.
     model = osim.Model(link_to_model)
