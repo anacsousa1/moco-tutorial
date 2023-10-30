@@ -38,7 +38,7 @@ model.addComponent(joint)
 actu = osim.CoordinateActuator()
 actu.setCoordinate(coord)
 actu.setName('actuator')
-actu.setOptimalForce(1)
+actu.setOptimalForce(10)
 model.addComponent(actu)
 
 # Attach geometry
