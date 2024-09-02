@@ -11,8 +11,6 @@ an optimisation-based musculoskeletal modeling and simulation framework.
 - **[Sliding Mass](https://anacsousa.notion.site/exampleSlidingMass-f37f23f7305c4f4689e72a15dcb5bc6b)**: Example demonstrating a basic sliding mass system.
 - **[Hanging muscle](https://anacsousa.notion.site/exampleHangingMuscle-93aad7ad49b945a6b0dc579c92e5738c)**: Example showcasing a hanging muscle system.
 - **[Optimize Mass](https://anacsousa.notion.site/exampleOptimizeMass-9ab491e8020441899c3ad27a098651a7)**: Example illustrating mass optimisation using Moco.
-- **[Kinematics Constraints](https://anacsousa.notion.site/exampleKinematicConstraints-f5e4d3e8f4fb48ddb040be33f84ea5b6)**: Example incorporating kinematic constraints in the simulation.
-
 
 ### Intermediate
 
