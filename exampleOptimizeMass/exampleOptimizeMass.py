@@ -53,12 +53,6 @@ spring.setStiffness(stiffness)
 spring.setViscosity(0.)
 model.addComponent(spring)
 
-# Attach geometry
-body.attachGeometry(osim.Sphere(0.05))
-
-model.finalizeConnections()
-
-
 # Create MocoStudy.
 # ================
 moco = osim.MocoStudy()
