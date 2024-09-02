@@ -26,8 +26,6 @@
 # See the README.txt next to this file for more information.
 
 import os
-
-os.add_dll_directory("C:/OpenSim 4.4/bin")
 import opensim as osim
 
 

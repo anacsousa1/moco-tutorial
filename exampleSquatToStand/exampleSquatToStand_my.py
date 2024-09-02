@@ -1,7 +1,6 @@
 # #Part 0: Load the Moco libraries and pre-configured Models.
 # These models are provided for you (i.e., they are not part of Moco).
 import os
-os.add_dll_directory("C:/OpenSim 4.4/bin")
 import opensim as osim
 from exampleSquatToStand_helpers import get_muscle_driven_model, compare_inverse_solutions, get_torque_driven_model
 from mocoPlotTrajectory import mocoPlotTrajectory

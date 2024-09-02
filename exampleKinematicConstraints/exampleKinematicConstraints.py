@@ -37,7 +37,6 @@
 # appendix of the Moco paper.
 
 import os
-os.add_dll_directory("C:/OpenSim 4.4/bin")
 import opensim as osim
 import numpy as np
 
