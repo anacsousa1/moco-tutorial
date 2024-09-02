@@ -23,7 +23,7 @@ an optimisation-based musculoskeletal modeling and simulation framework.
 ## Dependencies
 
 - Windows
-- [OpenSim 4.x](https://simtk.org/frs/index.php?group_id=91): Musculoskeletal modeling and simulation software.
+- [OpenSim >= 4.5.1](https://simtk.org/frs/index.php?group_id=91): Musculoskeletal modeling and simulation software.
 - [Moco](https://anaconda.org/opensim-org/opensim-moco/files): Optimisation-based modeling and simulation tool within OpenSim.
 
 [Tutorial](https://anacsousa.notion.site/Tutorial-OpenSim-Moco-in-Pycharm-b0675eeb85314c5abfa0e27f072d6b09?pvs=4) on how to setup PyCharm with OpenSim Moco.
@@ -32,7 +32,7 @@ an optimisation-based musculoskeletal modeling and simulation framework.
 
 To use the project, follow these steps:
 
-1. Ensure you have OpenSim 4.x and Moco installed on your system.
+1. Ensure you have OpenSim >= 4.5.1 installed on your system.
 2. Navigate to the respective example folder.
 3. Run the individual scripts within each folder to execute the examples.
 
