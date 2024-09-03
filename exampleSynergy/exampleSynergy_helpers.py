@@ -320,10 +320,14 @@ def muscle_driven_inverse_problem_groups(model, reference, dt):
     muscle_groups = {
         "hamst": ["/forceset/bifemlh_r", "/forceset/bifemsh_r"],
         "glut": ["/forceset/glut_max2_r"],
-        "quads": ["/forceset/psoas_r", "/forceset/rect_fem_r", "/forceset/vas_int_r"],
+        "quads": ["/forceset/rect_fem_r", "/forceset/vas_int_r"],
+        "psoas": ["/forceset/psoas_r"],
         "gast": ["/forceset/med_gas_r", "/forceset/soleus_r"],
         "tibialis": ["/forceset/tib_ant_r"],
     }
+
+    # Specify the muscle groups to be excluded from activation
+    exclude_groups = {"glut", "tibialis", "psoas"}
 
     # The number of synergies is equal to the number of muscle groups.
     numSynergies = len(muscle_groups)
@@ -396,20 +400,18 @@ def muscle_driven_inverse_problem_groups(model, reference, dt):
     for name in right_control_names:
         right_controller.addActuator(osim.Muscle.safeDownCast(model.getComponent(name)))
 
-    # Add each synergy vector to the controller.
+    # Expand synergy vectors to match the number of actuators
     for i in range(numSynergies):
-        # Create an empty synergy vector with size equal to the number of muscles.
         synergy_vector = osim.Vector(len(right_control_names), 0.0)
         idx = 0
-
-        # Assign the components of each synergy to the corresponding muscles.
         for group_name, muscle_list in muscle_groups.items():
+            if group_name in exclude_groups:
+                # Zero out the synergy vector for excluded groups
+                continue
             for muscle in muscle_list:
                 if muscle in right_control_names:
-                    # Assign the NNMF value to the corresponding muscle index.
                     synergy_vector.set(right_control_names.index(muscle), H[i, idx])
             idx += 1
-        # Add the synergy vector to the controller.
         right_controller.addSynergyVector(synergy_vector)
 
     # Attach the SynergyController to the model.
