@@ -3,7 +3,7 @@ import opensim as osim
 import numpy as np
 import matplotlib.pyplot as plt
 
-generic_link = 'Data/squatToStand_3dof9musc.osim'
+generic_link = 'squatToStand_3dof9musc.osim'
 
 
 def add_coordinate_actuator(model, coord_name, opt_force):
