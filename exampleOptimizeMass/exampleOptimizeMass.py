@@ -20,7 +20,6 @@
 # correct trajectory specified by the state bounds and the MocoMarkerFinalGoal.
 
 import os
-os.add_dll_directory("C:/OpenSim 4.4/bin")
 import opensim as osim
 import numpy as np
 
@@ -53,12 +52,6 @@ spring.setRestLength(0.)
 spring.setStiffness(stiffness)
 spring.setViscosity(0.)
 model.addComponent(spring)
-
-# Attach geometry
-body.attachGeometry(osim.Sphere(0.05))
-
-model.finalizeConnections()
-
 
 # Create MocoStudy.
 # ================

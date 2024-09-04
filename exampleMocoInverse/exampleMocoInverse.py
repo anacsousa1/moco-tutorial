@@ -24,7 +24,6 @@
 # See the README.txt next to this file for more information.
 
 import os
-os.add_dll_directory("C:/OpenSim 4.4/bin")
 import opensim as osim
 
 
@@ -178,9 +177,9 @@ data_folder_path = os.path.join(parent_directory, "Data")
 
 
 # This problem solves in about 5 minutes.
-#solve_moco_inverse(data_folder_path)
+solve_moco_inverse(data_folder_path)
 
 
 # This problem penalizes the deviation from electromyography data for a
 # subset of muscles, and solves in about 30 minutes.
-solve_moco_inverse_with_emg(data_folder_path)
+# solve_moco_inverse_with_emg(data_folder_path)
